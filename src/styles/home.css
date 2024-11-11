@@ -245,8 +245,9 @@ footer p {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
+  justify-content: center;
+  gap: 140px;
+  width: 95%;
 }
 
 footer a {
