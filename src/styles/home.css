@@ -74,13 +74,20 @@ body {
 
 .navbar a {
   margin-left: 25px;
+  margin-right: 25px;
   text-decoration: none;
   color: #333;
   font-size: 18px;
+  transition: font-weight 0.5s ease;
+}
+
+.navbar a:hover {
+  font-weight: bold;
 }
 
 .navbar img {
   max-height: 100px;
+  margin-left: 25px;
 }
 
 header {
@@ -94,6 +101,17 @@ header {
   text-align: center;
   padding: 40px 0;
 }
+header h1, 
+header h1 span, 
+header h1 .typing-container,
+header h1 #first-pep-talk {
+  display: inline;
+  vertical-align: baseline;
+  line-height: normal;
+  margin: 0;
+  padding: 0;
+}
+
 header h1 {
   color: #000;
   font-size: 36px;
@@ -107,6 +125,30 @@ header p {
   color: #666;
   max-width: 600px;
   margin: 20px auto;
+}
+#first-pep-talk {
+  color: #16c79a;
+  border-right: 2px solid #16c79a;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typing 3.5s steps(30, end) forwards,
+             blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #16c79a }
+}
+
+.typing-container {
+  display: inline-block;
+  vertical-align: baseline;
 }
 
 .built-by-container {
