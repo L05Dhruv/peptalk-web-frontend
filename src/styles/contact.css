@@ -23,6 +23,10 @@
     font-style: normal;
 }
 
+body {
+    background-color: #f8f9fa;
+}
+
 #header {
     text-align: center;
     margin-bottom: 3%;
@@ -95,4 +99,12 @@ button {
 
 p {
     text-align: center;
+}
+
+.faq-section {
+    margin-top: 0;
+}
+
+.faq-item:hover {
+    text-decoration: underline;
 }

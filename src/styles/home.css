@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 .poppins-thin {
   font-family: "Poppins", sans-serif;
   font-weight: 100;
@@ -100,7 +104,9 @@ header {
 .header-content {
   text-align: center;
   padding: 40px 0;
+  margin-left: 50px;
 }
+
 header h1, 
 header h1 span, 
 header h1 .typing-container,
@@ -126,19 +132,25 @@ header p {
   max-width: 600px;
   margin: 20px auto;
 }
+
 #first-pep-talk {
   color: #16c79a;
   border-right: 2px solid #16c79a;
   white-space: nowrap;
   overflow: hidden;
+  display: inline-block;
   width: 0;
-  animation: typing 3.5s steps(30, end) forwards,
+  animation: typing 3.5s steps(14, end) forwards,
              blink-caret .75s step-end infinite;
 }
 
 @keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+  from { 
+    width: 0; 
+  }
+  to { 
+    width: 14ch;
+  }
 }
 
 @keyframes blink-caret {
@@ -148,7 +160,6 @@ header p {
 
 .typing-container {
   display: inline-block;
-  vertical-align: baseline;
 }
 
 .built-by-container {
@@ -159,17 +170,18 @@ header p {
   justify-content: center;
 }
 
-.trusted-by {
+.carousel {
   text-align: center;
   margin-top: 1%;
-  padding: 20px 0;
 }
-#trusted-by-text {
-  font-size: 20px;
-  color: #000000;
-}
-.trusted-by img {
+/* .slides {
+  position: relative;
+  list-style: none;
+} */
+
+.slide {
   max-width: 170px;
+  max-height: 170px;
   margin: 10px;
 }
 
@@ -178,29 +190,50 @@ header p {
   text-align: center;
   width: 100%;
   box-sizing: border-box;
+  background: linear-gradient(180deg, #f8f9fa 5%, #16c79a 100%);
 }
 
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+.features-container {
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .feature-box {
-  background-color: #f8f8f8;
-  border-radius: 8px;
-  padding: 1.5rem;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  border-radius: 15px;
+  gap: 2rem;
+}
+
+.feature-box-text-left {
+  text-align: left;
+  flex-direction: column;
+}
+
+.feature-box-text-right {
+  text-align: right;
+  flex-direction: column;
 }
 
 .feature-box img {
-  max-width: 100%;
+  max-width: 750px;
   height: auto;
   margin-bottom: 1rem;
   border-radius: 10%;
+}
+
+.feature-box img:hover {
+  transform: scale(1);
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 .feature-box h3 {

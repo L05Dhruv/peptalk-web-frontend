@@ -9,5 +9,6 @@ export default defineConfig({
                 main: 'src/main.ts',
             }
         }
-    }
+    },
+    base: '/',
 })

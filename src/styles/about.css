@@ -62,9 +62,14 @@ h1 {
 .employee-box img {
     width: 150px;
     height: 150px;
-    border-radius: 50%;
+    border-radius: 40%;
     object-fit: cover;
     margin-bottom: 10px;
+}
+
+#founder-box img {
+    width: 200px;
+    height: 200px;
 }
 
 .name {
@@ -85,10 +90,7 @@ h1 {
 #team-box {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-#team-box .employee-box {
-    flex-basis: calc(33.33% - 20px);
-    margin-bottom: 30px;
+    margin-left: 10%;
+    margin-right: 10%;
+    gap: 5.6rem;
 }
