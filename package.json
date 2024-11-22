@@ -17,6 +17,9 @@
     "vite": "^5.4.1"
   },
   "dependencies": {
-    "vanilla-router": "^1.2.8"
+    "browser-sync": "^3.0.3",
+    "vanilla-router": "^1.2.8",
+    "vite-plugin-checker": "^0.8.0",
+    "vite-tsconfig-paths": "^5.1.3"
   }
 }

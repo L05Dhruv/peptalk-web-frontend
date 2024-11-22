@@ -2,6 +2,7 @@ import router from './router';
 
 router.check();
 
+/*
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOMContentLoaded');
 
@@ -49,3 +50,4 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#accept-cookies')?.addEventListener('click', acceptCookies);
     document.querySelector('#reject-cookies')?.addEventListener('click', rejectCookies);
 });
+*/

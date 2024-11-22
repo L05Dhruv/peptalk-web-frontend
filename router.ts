@@ -2,19 +2,25 @@ import Router from 'vanilla-router';
 
 const router = new Router({
   mode: 'hash',
-  root: '/index.html',
+  root: '/',
 });
 
 // Function to fetch and load content from a file
 async function loadPage(page: string): Promise<void> {
   const appElement = document.getElementById('app');
+  console.log(appElement);
   if (appElement) {
+    console.log('appElement found');
     try {
-      const response = await fetch(`/src/pages/${page}.html`);
+      const response = await fetch(`/pages/${page}.html`);
+      console.log(response);
       if (response.ok) {
+        console.log('response ok');
         const content = await response.text();
+        console.log(content);
         appElement.innerHTML = content;
       } else {
+        console.log('response not ok');
         appElement.innerHTML = '<h1>404 - Page Not Found</h1>';
       }
     } catch (error) {
