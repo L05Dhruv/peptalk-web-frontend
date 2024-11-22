@@ -8,11 +8,11 @@ const router = new Router({
 // Function to fetch and load content from a file
 async function loadPage(page: string): Promise<void> {
   const appElement = document.getElementById('app');
-  console.log(appElement);
+  // console.log(appElement);
   if (appElement) {
-    console.log('appElement found');
+    // console.log('appElement found');
     try {
-      const response = await fetch(`/pages/${page}.html`);
+      const response = await fetch(`/public/pages/${page}.html`);
       console.log(response);
       if (response.ok) {
         console.log('response ok');
