@@ -12,7 +12,7 @@ async function loadPage(page: string): Promise<void> {
   if (appElement) {
     // console.log('appElement found');
     try {
-      const response = await fetch(`/peptalk-web-frontend/public/pages/${page}.html`);
+      const response = await fetch(`/peptalk-web-frontend/pages/${page}.html`);
       console.log(response);
       if (response.ok) {
         console.log('response ok');
