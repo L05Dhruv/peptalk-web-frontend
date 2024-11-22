@@ -20,7 +20,7 @@ export default defineConfig({
         // This is the limit for inlining assets in the HTML - to prevent the HTML from being too large.
         // assetsInlineLimit: 4096,
     },
-    base: '/',
+    base: '/peptalk-web-frontend/',
     plugins: [
         tsconfigPaths(),
         checker({ typescript: true })
