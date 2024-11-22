@@ -2,7 +2,7 @@ import Router from 'vanilla-router';
 
 const router = new Router({
   mode: 'hash',
-  root: '/peptalk-web-frontend/',
+  root: '/',
 });
 
 // Function to fetch and load content from a file
@@ -12,7 +12,7 @@ async function loadPage(page: string): Promise<void> {
   if (appElement) {
     // console.log('appElement found');
     try {
-      const response = await fetch(`/public/pages/${page}.html`);
+      const response = await fetch(`/peptalk-web-frontend/public/pages/${page}.html`);
       console.log(response);
       if (response.ok) {
         console.log('response ok');
