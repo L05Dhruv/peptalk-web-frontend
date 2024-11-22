@@ -2,7 +2,7 @@ import Router from 'vanilla-router';
 
 const router = new Router({
   mode: 'hash',
-  root: '/',
+  root: '/peptalk-web-frontend/',
 });
 
 // Function to fetch and load content from a file
