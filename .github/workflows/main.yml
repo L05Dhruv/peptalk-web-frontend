@@ -17,6 +17,9 @@ jobs:
 
       - name: Install Dependencies
         run: npm install
+      
+      - name: Clean up existing worktrees
+        run: git worktree prune
 
       - name: Build
         run: npm run build
@@ -33,3 +36,5 @@ jobs:
           branch: gh-pages
           folder: dist
           token: ${{ secrets.GITHUB_TOKEN }}
+          # debug: true
+
