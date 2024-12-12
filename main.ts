@@ -2,10 +2,23 @@ import router from './router';
 
 router.check();
 
-/*
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOMContentLoaded');
+    
+    const menuButton: HTMLElement | null = document.querySelector('.menu-button');
+    const dropdownMenu: HTMLElement | null = document.querySelector('.dropdown-menu');
 
+    menuButton?.addEventListener('click', function() {
+        if (!dropdownMenu) return;
+        
+        if (dropdownMenu.style.display === 'block') {
+            dropdownMenu.style.display = 'none';
+        } else {
+            dropdownMenu.style.display = 'block';
+        }
+    });
+
+    /*
     const slides = document.querySelectorAll(".slide");
     console.log(slides);
     
@@ -49,5 +62,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add event listeners to cookie buttons
     document.querySelector('#accept-cookies')?.addEventListener('click', acceptCookies);
     document.querySelector('#reject-cookies')?.addEventListener('click', rejectCookies);
+    */
 });
-*/

@@ -116,25 +116,6 @@ header {
   margin-right: 100px;
 }
 
-header h1, 
-header h1 span, 
-header h1 .typing-container,
-header h1 #first-pep-talk {
-  display: inline;
-  vertical-align: baseline;
-  line-height: normal;
-  margin: 0;
-  padding: 0;
-}
-
-header h1 {
-  color: #000;
-  font-size: 36px;
-}
-header h1 span {
-  color: #16c79a;
-}
-
 header p {
   font-size: 20px;
   color: #666;
@@ -173,8 +154,11 @@ header img {
   50% { border-color: #16c79a }
 }
 
-.typing-container {
-  display: inline-block;
+
+#built-by-text {
+  margin-top: 1%;
+  margin-bottom: 1%;
+  text-align: center;
 }
 
 .built-by-container {
@@ -184,15 +168,6 @@ header img {
   gap: 100px;
   justify-content: center;
 }
-
-.carousel {
-  text-align: center;
-  margin-top: 1%;
-}
-/* .slides {
-  position: relative;
-  list-style: none;
-} */
 
 .slide {
   max-width: 170px;
@@ -205,7 +180,11 @@ header img {
   text-align: center;
   width: 100%;
   box-sizing: border-box;
-  background: linear-gradient(180deg, #f8f9fa 5%, #ccfff2 100%);
+  background: linear-gradient(180deg, #f8f9fa 5%, #ccfff2 100%, #f8f9fa 5%);
+}
+
+.features-section h2 {
+  color: #16c79a;
 }
 
 .features-container {
@@ -315,16 +294,41 @@ footer a {
 /* Use media queries to adjust styles for different screen sizes */
 @media (max-width: 768px) {
   .navbar {
+    display: none;
+  }
+  .menu-button {
+    width: 20%;
+    left: 10px;
+    right: auto;
+    display: block;
+    color: #333;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1.5rem;
     position: fixed;
-    top: 0;
-    right: -100%;
-    height: 100vh;
-    width: 250px;
+    z-index: 1001;
+  }
+  .dropdown-menu {
+    display: none;
+    position: fixed;
+    top: 40px;
+    left: 60px;
     background-color: #f8f9fa;
-    padding: 20px;
-    transition: right 0.3s ease-in-out;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    width: 200px;
+    border-radius: 5px;
+  }
+  .dropdown-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+  }
+  .dropdown-menu a:hover {
+    background-color: #e9ecef;
   }
   .features-container {
     flex-direction: column;
@@ -347,7 +351,7 @@ footer a {
     flex-direction: column;
   }
   .header-content {
-    margin: 0;
+    margin: 0; 
     padding: 20px;
   }
   header img {
@@ -393,4 +397,14 @@ header p {
 
 .navbar a {
   font-size: 1rem;
+}
+
+/* Hide the dropdown menu on larger screens */
+@media (min-width: 769px) {
+  .dropdown-menu {
+    display: none; /* Ensure the dropdown menu is hidden on larger screens */
+  }
+  .menu-button {
+    display: none;
+  }
 }

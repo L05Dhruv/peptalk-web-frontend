@@ -13,14 +13,10 @@ async function loadPage(page: string): Promise<void> {
     // console.log('appElement found');
     try {
       const response = await fetch(`/peptalk-web-frontend/pages/${page}.html`);
-      console.log(response);
       if (response.ok) {
-        console.log('response ok');
         const content = await response.text();
-        console.log(content);
         appElement.innerHTML = content;
       } else {
-        console.log('response not ok');
         appElement.innerHTML = '<h1>404 - Page Not Found</h1>';
       }
     } catch (error) {
