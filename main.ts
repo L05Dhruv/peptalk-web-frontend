@@ -38,35 +38,45 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentSlide = slides[0];
     // Set the active slide
     currentSlide.setAttribute('data-active', 'true');
+    */
 
     // Cookie Consent Banner
-    const acceptCookies = () => {
-        const cookieElement = document.getElementById('cookie-consent') as HTMLButtonElement;
-        if (!cookieElement) return;
-        cookieElement.style.display = 'none';
-        localStorage.setItem('cookieConsent', 'accepted');
-        console.log('Cookies accepted');
-        cookieElement.parentNode?.removeChild(cookieElement);
+    const cookieElement: HTMLElement | null = document.querySelector('.cookie-consent') as HTMLElement;
+    if (!cookieElement) {
+        console.error('Cookie consent element not found');
+        return;
     }
     
-    const rejectCookies = () => {
-        const cookieElement = document.getElementById('cookie-consent') as HTMLButtonElement;
-        if (!cookieElement) return;
+    const acceptButton: HTMLButtonElement | null = document.getElementById('accept-cookies') as HTMLButtonElement;
+    acceptButton?.addEventListener('click', function () {
+        if (!acceptButton) {
+            console.error('Accept button not found');
+            return;
+        }
+        
+        localStorage.setItem('cookieConsent', 'accepted');
+        console.log('Cookies accepted');
         cookieElement.style.display = 'none';
+    });
+    
+    const rejectButton: HTMLButtonElement | null = document.getElementById('reject-cookies') as HTMLButtonElement;
+    rejectButton?.addEventListener('click', function () {
+        if (!rejectButton) {
+            console.error('Reject button not found');
+            return;
+        }
+
         localStorage.setItem('cookieConsent', 'rejected');
-    }
+        console.log('Cookies rejected');
+        cookieElement.style.display = 'none';
+    });
     
     // Check if user has already accepted cookies
     window.onload = function() {
         if (localStorage.getItem('cookieConsent') === 'accepted') {
-            const cookieElement = document.getElementById('cookie-consent') as HTMLButtonElement;
+            const cookieElement: HTMLButtonElement | null = document.getElementById('cookie-consent') as HTMLButtonElement;
             if (!cookieElement) return;
             cookieElement.style.display = 'none';
         }
     }
-
-    // Add event listeners to cookie buttons
-    document.querySelector('#accept-cookies')?.addEventListener('click', acceptCookies);
-    document.querySelector('#reject-cookies')?.addEventListener('click', rejectCookies);
-    */
 });

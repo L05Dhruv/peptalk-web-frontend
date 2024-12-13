@@ -136,16 +136,16 @@ header img {
   overflow: hidden;
   display: inline-block;
   width: 0;
-  animation: typing 3.5s steps(14, end) forwards,
+  animation: typing 3.5s steps(13, end) forwards,
              blink-caret .75s step-end infinite;
 }
 
 @keyframes typing {
   from { 
-    width: 0; 
+    width: 0;
   }
   to { 
-    width: 14ch;
+    width: 13ch;
   }
 }
 
@@ -220,14 +220,12 @@ header img {
   height: auto;
   margin-bottom: 1rem;
   border-radius: 10%;
+  transform: scale(1);
+  transition: transform 0.3s ease;
 }
 
 .feature-box img:hover {
-  transform: scale(1);
-  transition: transform 0.3s ease;
-  &:hover {
-    transform: scale(1.05);
-  }
+  transform: scale(1.05);
 }
 
 .feature-box h3 {
@@ -389,6 +387,9 @@ body {
 
 header h1 {
   font-size: 2.25rem; /* Adjusted for responsiveness */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 header p {
