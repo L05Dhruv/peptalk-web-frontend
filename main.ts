@@ -18,6 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    dropdownMenu?.addEventListener('click', function() {
+        if (!dropdownMenu) return;
+
+        dropdownMenu.style.display = 'none';
+    });
+
     /*
     const slides = document.querySelectorAll(".slide");
     console.log(slides);
