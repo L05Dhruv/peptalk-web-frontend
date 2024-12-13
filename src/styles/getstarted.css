@@ -21,5 +21,40 @@
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     font-style: normal;
+    background-color: #16c79a;
 }
 
+#book-demo-title {
+    padding-top: 40px;
+}
+
+#submit-button {
+  width: 100%;
+  padding: 10px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+  div {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  #contact-form {
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 100px;
+  }
+  
+  #book-demo-title {
+        
+    }
+}

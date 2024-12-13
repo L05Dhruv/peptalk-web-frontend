@@ -88,7 +88,7 @@ textarea {
     height: 150px;
 }
 
-button {
+#send-button {
     width: 100%;
     padding: 10px;
     color: white;
@@ -107,4 +107,10 @@ p {
 
 .faq-item:hover {
     text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .form-box {
+        width: 100%;
+    }
 }
