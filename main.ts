@@ -24,22 +24,50 @@ document.addEventListener('DOMContentLoaded', () => {
         dropdownMenu.style.display = 'none';
     });
 
-    /*
-    const slides = document.querySelectorAll(".slide");
-    console.log(slides);
+    const contactButton: HTMLElement | null = document.querySelector('.contact-button');
+    contactButton?.addEventListener('click', function() {
+        if (!contactButton) return;
+
+        const contactForm: HTMLElement | null = document.querySelector('.contact-form');
+        if (!contactForm) return;
+
+        const name: string = (contactForm.querySelector('input[name="name"]') as HTMLInputElement)?.value || '';
+        const email: string = (contactForm.querySelector('input[name="email"]') as HTMLInputElement)?.value || '';
+        const reason: string = (contactForm.querySelector('select[name="reason"]') as HTMLSelectElement)?.value || '';
+        const message: string = (contactForm.querySelector('textarea[name="message"]') as HTMLTextAreaElement)?.value || '';
+
+        console.log(name, email, reason, message);
+
+        contactForm.style.display = 'block';
+        contactForm.scrollIntoView({ behavior: 'smooth' });
+        window.location.href = '/contact';
     
+        // Send email to help@peptalkhealth.com
+        const sendEmail = async () => {
+            try {
+                const response = await fetch('http://localhost:3000/email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ name, email, reason, message }),
+                });
+                if (!response.ok) {
+                    throw new Error('Failed to send email');
+                }
+                const data = await response.json();
+                console.log(data);
+            } catch (error) {
+                console.error('Error sending email:', error);
+            }
+        }
+        sendEmail();
+    
+    });
 
-    // Carousel: Check if there are any slides before proceeding
-    if (slides.length === 0) {
-        console.error('No slides found with class "slide"');
-        return;
-    }
-    // Get the first slide if none is active
-    const currentSlide = slides[0];
-    // Set the active slide
-    currentSlide.setAttribute('data-active', 'true');
-    */
 
+
+    
     // Cookie Consent Banner
     const cookieElement: HTMLElement | null = document.querySelector('.cookie-consent') as HTMLElement;
     if (!cookieElement) {
@@ -65,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Reject button not found');
             return;
         }
-
+        
         localStorage.setItem('cookieConsent', 'rejected');
         console.log('Cookies rejected');
         cookieElement.style.display = 'none';
@@ -79,4 +107,18 @@ document.addEventListener('DOMContentLoaded', () => {
             cookieElement.style.display = 'none';
         }
     }
+    
+    /* Testing frontend connection
+        const fetchItems = async () => {
+            try {
+                const response = await fetch('http://localhost:3000/api/items');
+                const data = await response.json();
+                console.log(data); // Process data
+            } catch (error) {
+                console.error('Error fetching items:', error);
+            }
+        };
+        
+        fetchItems();  
+     */
 });
