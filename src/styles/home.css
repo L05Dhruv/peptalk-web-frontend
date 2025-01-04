@@ -228,6 +228,10 @@ header img {
   transform: scale(1.05);
 }
 
+#doctor-patient-image {
+  max-width: 550px;
+}
+
 .feature-box h3 {
   margin-bottom: 0.5rem;
 }
@@ -296,8 +300,8 @@ footer a {
   }
   .menu-button {
     width: 20%;
-    left: 10px;
-    right: auto;
+    left: auto;
+    right: 10px;
     display: block;
     color: #333;
     border: none;
@@ -311,7 +315,7 @@ footer a {
     display: none;
     position: fixed;
     top: 40px;
-    left: 60px;
+    left: 150px;
     background-color: #f8f9fa;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
@@ -382,7 +386,6 @@ img {
 body {
   font-size: 1rem; /* Base font size */
   line-height: 1.5;
-  padding: 0 1rem;
 }
 
 header h1 {
@@ -408,4 +411,16 @@ header p {
   .menu-button {
     display: none;
   }
+  /* #first-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 10px;
+  }
+  #second-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 10px;
+  } */
 }

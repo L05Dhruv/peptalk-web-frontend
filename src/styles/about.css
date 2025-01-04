@@ -91,18 +91,17 @@ h1 {
     margin-bottom: 60px;
 }
 
+@media (min-width: 1750px) {
+    #team-box{
+        padding-left:100px;
+    }
+}
 
 @media (max-width: 768px) {
     
     h1 {
         padding-top: 40px;
     }
-    
-    /* #diggy-img {
-        border-radius: 40%;
-        width: 200px;
-        height: 200px;
-    } */
 
     .employee-box {
         display: flex;
@@ -124,8 +123,18 @@ h1 {
         padding-top: 40px;
         padding-right: 0px;
         font-size: 1.2rem;
+        text-align: center;
     }
-    
+}
+
+@media (max-width:1500px) and (min-width:768px) {
+    #team-box {
+        padding-left:100px;
+        overflow:hidden;
+    }
+}
+
+@media (max-width:995px) {
     #team-box {
         display: flex;
         flex-direction: column;
