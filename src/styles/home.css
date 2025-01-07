@@ -293,7 +293,7 @@ footer a {
   gap: 23px;
 }
 
-/* Use media queries to adjust styles for different screen sizes */
+/* Media Queries for Mobile */
 @media (max-width: 768px) {
   .navbar {
     display: none;
@@ -356,6 +356,15 @@ footer a {
     margin: 0; 
     padding: 20px;
   }
+
+  .header-content h1 {
+    font-size: 1.45rem;
+    /* align-items: center; */
+    justify-content: center;
+  }
+  .header-content p {
+    font-size: 1.1rem;
+  }
   header img {
     max-width: 100%;
     height: auto;
@@ -373,6 +382,15 @@ footer a {
   footer p {
     flex-direction: column;
     gap: 20px;
+  }
+  #doctor-patient-image {
+    max-width: 80%;
+    object-fit:cover;
+    max-height: auto;
+  }
+  #digital-signage {
+    display: flex;
+    flex-direction: column-reverse;
   }
 }
 
@@ -411,16 +429,4 @@ header p {
   .menu-button {
     display: none;
   }
-  /* #first-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-left: 10px;
-  }
-  #second-footer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-right: 10px;
-  } */
 }
