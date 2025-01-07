@@ -293,6 +293,11 @@ footer a {
   gap: 23px;
 }
 
+footer p a:hover {
+  text-decoration: underline;
+  font-size: 101%;
+}
+
 /* Media Queries for Mobile */
 @media (max-width: 768px) {
   .navbar {
