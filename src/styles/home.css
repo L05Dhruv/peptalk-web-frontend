@@ -297,7 +297,7 @@ footer a {
   gap: 23px;
 }
 
-#clickable-footer:hover {
+.clickable-footer:hover {
   text-decoration: underline;
   font-size: 101%;
 }
