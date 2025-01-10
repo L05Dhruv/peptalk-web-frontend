@@ -2,6 +2,7 @@ import Router from 'vanilla-router';
 
 const router = new Router({
   mode: 'hash',
+  // mode:'history',
   root: '/peptalk-web-frontend/',
 });
 

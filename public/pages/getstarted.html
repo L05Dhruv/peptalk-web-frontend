@@ -5,19 +5,19 @@
     <p>Leave us a message so we can learn more about how we can help you</p>
     <form id="contact-form" action="/post" class="form-box">
         <div class="input-row">
-            <input type="text" placeholder="First Name" name="fName">
-            <input type="text" placeholder="Last Name" name="lName">
+            <input type="text" placeholder="Name" name="name">
             <input type="email" placeholder="Email" name="email">
-            <input type="text" placeholder="Phone #" name="phone">
+            <!-- <input type="text" placeholder="Phone #" name="phone"> -->
         </div>
         <textarea id="message" placeholder="How can we help your business? Leave a good time to reach you." name="message"></textarea>
         <span>
             <input type="date" name="date" placeholder="Date and Time" class="poppins-regular">
             <input type="time" name="time" placeholder="Time" class="poppins-regular">
-            <!-- snap to 15 minute intervals --->
+            <!-- Version 2.0: snap to 15 minute intervals --->
             <p class="poppins-extralight">Eastern Standard Time</p>
         </span>
         <button class="poppins-bold" id="submit-button">Submit</button>
-        <!-- goes to help@peptalkhealth.com -->
+        <!-- goes to help@peptalkhealth.com with the reason: "Book a demo" -->
+         <!-- include date and time in body with message? -->
     </form>
 </div>

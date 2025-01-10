@@ -4,7 +4,20 @@ router.check();
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOMContentLoaded');
+
+    // Testing frontend to backend connection
+    // const fetchItems = async () => {
+    //     try {
+    //         const response = await fetch('http://localhost:3000/api/items');
+    //         const data = await response.json();
+    //         console.log(data); // Process data
+    //     } catch (error) {
+    //         console.error('Error fetching items:', error);
+    //     }
+    // };
+    // fetchItems();  
     
+    // Menu Button for mobile
     const menuButton: HTMLElement | null = document.querySelector('.menu-button');
     const dropdownMenu: HTMLElement | null = document.querySelector('.dropdown-menu');
 
@@ -23,53 +36,65 @@ document.addEventListener('DOMContentLoaded', () => {
 
         dropdownMenu.style.display = 'none';
     });
+    // End of Menu Button for mobile
 
-    const contactButton: HTMLElement | null = document.querySelector('.contact-button');
+    // Contact page send Button
+    const contactButton: HTMLElement | null = document.querySelector('.send-button');
     contactButton?.addEventListener('click', function() {
-        if (!contactButton) return;
+        console.log('button clicked');
+        // if (!contactButton) return;
 
-        const contactForm: HTMLElement | null = document.querySelector('.contact-form');
-        if (!contactForm) return;
+        // const contactForm: HTMLElement | null = document.querySelector('.contact-form');
+        // if (!contactForm) return;
 
-        const name: string = (contactForm.querySelector('input[name="name"]') as HTMLInputElement)?.value || '';
-        const email: string = (contactForm.querySelector('input[name="email"]') as HTMLInputElement)?.value || '';
-        const reason: string = (contactForm.querySelector('select[name="reason"]') as HTMLSelectElement)?.value || '';
-        const message: string = (contactForm.querySelector('textarea[name="message"]') as HTMLTextAreaElement)?.value || '';
+        // const name: string = (contactForm.querySelector('input[name="name"]') as HTMLInputElement)?.value || '';
+        // const email: string = (contactForm.querySelector('input[name="email"]') as HTMLInputElement)?.value || '';
+        // const reason: string = (contactForm.querySelector('select[name="reason"]') as HTMLSelectElement)?.value || '';
+        // const message: string = (contactForm.querySelector('textarea[name="message"]') as HTMLTextAreaElement)?.value || '';
 
-        console.log(name, email, reason, message);
+        // console.log(name, email, reason, message);
 
-        contactForm.style.display = 'block';
-        contactForm.scrollIntoView({ behavior: 'smooth' });
-        window.location.href = '/contact';
+        // contactForm.style.display = 'block';
+        // contactForm.scrollIntoView({ behavior: 'smooth' });
+        // window.location.href = '/contact';
     
-        // Send email to help@peptalkhealth.com
-        const sendEmail = async () => {
-            try {
-                const response = await fetch('http://localhost:3000/email', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ name, email, reason, message }),
-                });
-                if (!response.ok) {
-                    throw new Error('Failed to send email');
-                }
-                const data = await response.json();
-                console.log(data);
-            } catch (error) {
-                console.error('Error sending email:', error);
-            }
-        }
-        sendEmail();
+        // // Send email to help@peptalkhealth.com
+        // const sendEmail = async () => {
+        //     try {
+        //         const response = await fetch('http://localhost:3000/email', {
+        //             method: 'POST',
+        //             headers: {
+        //                 'Content-Type': 'application/json',
+        //             },
+        //             body: JSON.stringify({ name, email, reason, message }),
+        //         });
+        //         if (!response.ok) {
+        //             throw new Error('Failed to send email');
+        //         }
+        //         const data = await response.json();
+        //         console.log(data);
+        //     } catch (error) {
+        //         console.error('Error sending email:', error);
+        //     }
+        // }
+        // sendEmail();
     
     });
+    // End of Contact page send Button
 
+    // Get Started page submit Button
+    const getStartedButton: HTMLElement | null = document.querySelector('.submit-button');
+    getStartedButton?.addEventListener('click', function() {
+        console.log('button clicked');
+        if (!getStartedButton) return;
 
+        // window.location.href = '/getstarted';
+    });
+    // End of Get Started page submit Button  
 
     
     // Cookie Consent Banner
-    const cookieElement: HTMLElement | null = document.querySelector('.cookie-consent') as HTMLElement;
+    const cookieElement: HTMLElement | null = document.getElementById('cookie-consent') as HTMLElement;
     if (!cookieElement) {
         console.error('Cookie consent element not found');
         return;
@@ -107,18 +132,5 @@ document.addEventListener('DOMContentLoaded', () => {
             cookieElement.style.display = 'none';
         }
     }
-    
-    /* Testing frontend connection
-        const fetchItems = async () => {
-            try {
-                const response = await fetch('http://localhost:3000/api/items');
-                const data = await response.json();
-                console.log(data); // Process data
-            } catch (error) {
-                console.error('Error fetching items:', error);
-            }
-        };
-        
-        fetchItems();  
-     */
+     
 });
