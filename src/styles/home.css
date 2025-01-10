@@ -116,6 +116,10 @@ header {
   margin-right: 100px;
 }
 
+#space-span {
+  margin-left: 8px;
+}
+
 header p {
   font-size: 20px;
   color: #666;
@@ -363,7 +367,7 @@ footer a {
   }
 
   .header-content h1 {
-    font-size: 1.45rem;
+    font-size: 1.399rem;
     /* align-items: center; */
     justify-content: center;
   }
@@ -398,6 +402,24 @@ footer a {
     flex-direction: column-reverse;
   }
 }
+
+/* Media queries for Tablet */
+@media (min-width: 769px) and (max-width: 1290px) {
+  /* .header-content h1 {
+    font-size: 1.6rem;
+  } */
+   header {
+    flex-direction: column;
+   }
+   .header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0px;
+    margin-right: 0px;
+   }
+}
+
 
 /* Ensure images are responsive */
 img {
