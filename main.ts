@@ -1,8 +1,8 @@
 import router from './router';
-import {cookies} from './cookies';
-import {menu} from './menu';
-import {contactButton} from './contactButton';
-import {getStartedButton} from './getStartedButton';
+import {cookies} from './src/scripts/cookies';
+import {menu} from './src/scripts/menu';
+import {contactButton} from './src/scripts/contactButton';
+import {getStartedButton} from './src/scripts/getStartedButton';
 
 router.check();
 
