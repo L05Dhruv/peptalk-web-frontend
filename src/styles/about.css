@@ -74,6 +74,10 @@ h1 {
     max-width: none;
 }
 
+.employee-box a {
+    width: 200px;
+}
+
 .name {
     font-weight: bold;
     display: block;
@@ -92,6 +96,7 @@ h1 {
 #team-box {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     margin-left: 10%;
     margin-right: 10%;
     gap: 5.6rem;
