@@ -22,15 +22,16 @@ document.addEventListener('DOMContentLoaded', () => {
     getStartedButton();
 
     // Testing frontend to backend connection
-    // const fetchItems = async () => {
-    //     try {
-    //         const response = await fetch('http://localhost:3000/api/items');
-    //         const data = await response.json();
-    //         console.log(data); // Process data
-    //     } catch (error) {
-    //         console.error('Error fetching items:', error);
-    //     }
-    // };
-    // fetchItems();
+    const fetchItems = async () => {
+        try {
+            console.log('Fetching items');
+            const response = await fetch('http://localhost:3000/api/items');
+            const data = await response.json();
+            console.log('Data:', data); // Process data
+        } catch (error) {
+            console.error('Error fetching items:', error);
+        }
+    };
+    fetchItems();
    
 });
