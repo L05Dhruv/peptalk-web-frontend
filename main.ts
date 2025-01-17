@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const fetchItems = async () => {
         try {
             console.log('Fetching items');
-            const response = await fetch('http://localhost:3000/api/items');
+            const response = await fetch('https://localhost:3000/api/items');
             const data = await response.json();
             console.log('Data:', data); // Process data
         } catch (error) {
