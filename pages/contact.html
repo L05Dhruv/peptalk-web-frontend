@@ -1,9 +1,9 @@
 <h1 id="header">Contact Us</h1>
 <p>Need to get in touch with us? Fill out our form with your message and we will get back to you shortly.</p>
-<form action="" method="post" class="form-box">
+<form id="contact-form" action="mailto:help@peptalkhealth.com?&subject=Contact%20Form%20Submission" class="form-box">
     <div class="input-row">
-        <input type="text" placeholder="Name" name="name">
-        <input type="email" placeholder="Email" name="email">
+        <input type="text" placeholder="Name" name="name" id="name">
+        <input type="email" placeholder="Email" name="email" id="email">
     </div>
     <select name="reason" id="subject">
         <option value="general-inquiry">General Inquiry</option>
@@ -12,10 +12,7 @@
         <option value="delete-my-account-data">Delete My Account & Data</option>
     </select>
     <textarea id="message" placeholder="Message" name="message"></textarea>
-    <button class="poppins-bold" id="send-button" type="submit">
-        <a href="mailto:help@peptalkhealth.com?subject=Contact%20Us&body=Name:%20%name%%20Email:%20%email%%20Reason:%20%reason%%20Message:%20%message%">Send</a>
-    </button>
-    <!-- goes to help@peptalkhealth.com -->
+    <button class="poppins-bold" id="send-button" type="submit">Send</button>
 </form>
 
 <!-- <div class="faq-section">
