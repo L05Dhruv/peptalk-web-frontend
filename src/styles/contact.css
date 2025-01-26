@@ -108,6 +108,11 @@ p {
     text-decoration: underline;
 }
 
+button a {
+    text-decoration: none;
+    color: white;
+}
+
 @media (max-width: 768px) {
     .form-box {
         width: 95%;

@@ -7,17 +7,21 @@ export default defineConfig({
     // Specify any configuration you want here
     build: {
         outDir: 'dist',
-        assetsDir: 'assets',
+        // assetsDir: 'assets',
         rollupOptions: {
             input: {
                 main: 'index.html',
                 // Add other entry points if needed
             }
-        }
+        },
+        // Ensure HTML files are copied to dist
+        copyPublicDir: true
     },
     base: '/',
     plugins: [
         tsconfigPaths(),
         checker({ typescript: true })
     ],
+    // Add public directory configuration
+    publicDir: 'public',
 })

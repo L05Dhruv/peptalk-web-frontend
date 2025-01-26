@@ -4,6 +4,7 @@ import {menu} from './src/scripts/menu';
 // import {contactButton} from './src/scripts/contactButton';
 // import {getStartedButton} from './src/scripts/getStartedButton';
 
+// Initialize router first
 router.check();
 
 document.addEventListener('DOMContentLoaded', () => {

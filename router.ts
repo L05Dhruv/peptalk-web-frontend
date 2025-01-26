@@ -3,19 +3,25 @@ import Router from 'vanilla-router';
 const router = new Router({
   mode: 'hash',
   // mode:'history',
-  root: '/peptalk-web-frontend/',
+  root: '/',
 });
 
 // Function to fetch and load content from a file
 async function loadPage(page: string): Promise<void> {
   const appElement = document.getElementById('app');
-  // console.log(appElement);
+  console.log(appElement);
   if (appElement) {
-    // console.log('appElement found');
+    console.log('appElement found');
     try {
-      const response = await fetch(`/peptalk-web-frontend/pages/${page}.html`);
+      // Add a check for initial load
+      if (document.location.hash === '' || document.location.hash === '#/') {
+        page = 'home';
+      }
+      
+      const response = await fetch(`${window.location.origin}/pages/${page}.html`);
       if (response.ok) {
         const content = await response.text();
+        console.log('response ok: ', response);
         appElement.innerHTML = content;
       } else {
         appElement.innerHTML = '<h1>404 - Page Not Found</h1>';
@@ -39,7 +45,8 @@ router.add('/info-release', () => loadPage('info-release'));  // Load info-relea
 router.add('/consumer-notice', () => loadPage('consumer-notice'));  // Load consumer-notice.html for the /consumer-notice route
 router.add('/delete-my-data', () => loadPage('delete-my-data'));  // Load delete-my-data.html for the /delete-my-data route
 
-// Listen to URL changes
+// Check initial route
+router.check();
 router.addUriListener();
 
 export default router;
