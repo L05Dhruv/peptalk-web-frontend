@@ -9,9 +9,7 @@ const router = new Router({
 // Function to fetch and load content from a file
 async function loadPage(page: string): Promise<void> {
   const appElement = document.getElementById('app');
-  console.log(appElement);
   if (appElement) {
-    console.log('appElement found');
     try {
       // Add a check for initial load
       if (document.location.hash === '' || document.location.hash === '#/') {
@@ -21,7 +19,6 @@ async function loadPage(page: string): Promise<void> {
       const response = await fetch(`${window.location.origin}/pages/${page}.html`);
       if (response.ok) {
         const content = await response.text();
-        console.log('response ok: ', response);
         appElement.innerHTML = content;
       } else {
         appElement.innerHTML = '<h1>404 - Page Not Found</h1>';

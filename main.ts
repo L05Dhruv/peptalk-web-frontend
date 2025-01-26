@@ -3,6 +3,7 @@ import {cookies} from './src/scripts/cookies';
 import {menu} from './src/scripts/menu';
 // import {contactButton} from './src/scripts/contactButton';
 // import {getStartedButton} from './src/scripts/getStartedButton';
+import {contactMailto} from './src/scripts/contactMailto';
 
 // Initialize router first
 router.check();
@@ -15,9 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3 line-menu button for mobile
     menu();
-    
+
     // Contact Page interactivity
     // contactButton();
+    contactMailto();
     
     // Get Started Page interactivity
     // getStartedButton();
