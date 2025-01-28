@@ -3,20 +3,20 @@
     <p>Get a personalized demo of Pep Talk Health.</p>
 
     <p>Leave us a message so we can learn more about how we can help you</p>
-    <form id="contact-form" action="mailto:help@peptalkhealth.com?subject=Book%20a%20demo" class="form-box">
+    <form id="contact-form" action="mailto:help@peptalkhealth.com?&subject=Book%20a%20demo" class="form-box" method="GET">
         <div class="input-row">
-            <input type="text" placeholder="Name" name="name">
-            <input type="email" placeholder="Email" name="email">
+            <input type="text" placeholder="Name or Company Name" name="subject">
+            <!-- <input type="email" placeholder="Email" name="email"> -->
             <!-- <input type="text" placeholder="Phone #" name="phone"> -->
         </div>
-        <textarea id="message" placeholder="How can we help your business? Leave a good time to reach you." name="message"></textarea>
+        <textarea id="message" placeholder="How can we help your business? Leave a good time to reach you." name="body"></textarea>
         <span>
             <input type="date" name="date" placeholder="Date and Time" class="poppins-regular">
             <input type="time" name="time" placeholder="Time" class="poppins-regular">
             <!-- Version 2.0: snap to 15 minute intervals --->
             <p class="poppins-extralight">Eastern Standard Time</p>
         </span>
-        <button class="poppins-bold" id="submit-button">
+        <button class="poppins-bold" id="submit-button" type="submit">
             Submit
         </button>
         <!-- goes to help@peptalkhealth.com with the reason: "Book a demo" -->
